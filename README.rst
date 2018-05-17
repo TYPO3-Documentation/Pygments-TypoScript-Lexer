@@ -9,7 +9,7 @@ and code highlighting of TYPO3 TypoScript code.
 The purpose of this repository is to have a safe place
 where the lexer can be copied from when setting up servers.
 
-**Use the file** in `bitbucket-org-birkenfeld-pygments-main/typoscript.py`
+**Use the file** in `./typoscript.py`
 for setting up servers.
 
 :Author:          Michiel Roos <michiel.roos@typo3.org>
@@ -30,7 +30,7 @@ Install Pygments first. Afterwards:
 
 .. highlight:: shell
 
-1. Pick the file `bitbucket-org-birkenfeld-pygments-main/typoscript.py`
+1. Pick the file `./typoscript.py`
 
 2. You may need 'sudo' rights for the following.
 
