@@ -118,6 +118,7 @@ class TypoScriptLexer(RegexLexer):
     tokens = {
         'root': [
             include('comment'),
+            include('import'),
             include('constant'),
             include('html'),
             include('label'),
@@ -164,6 +165,12 @@ class TypoScriptLexer(RegexLexer):
             # PHP objects
             (r'(?=[\w\-])(PHP_SCRIPT(_EXT|_INT)?)', Name.Class),
             (r'(?=[\w\-])(userFunc)(?![\w\-])', Name.Function),
+        ],
+        'import': [
+            (r'(@import)(\s+)(\')([^\']*)(\')',
+             bygroups(Name.Function, Text, Punctuation, String, Punctuation)),
+            (r'(@import)(\s+)(")([^"]*)(")',
+             bygroups(Name.Function, Text, Punctuation, String, Punctuation)),
         ],
         'whitespace': [
             (r'\s+', Text),
