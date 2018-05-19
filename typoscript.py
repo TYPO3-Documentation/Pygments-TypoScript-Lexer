@@ -59,7 +59,8 @@ class TypoScriptCssDataLexer(RegexLexer):
              Comment),
             # other
             (r'[<>,:=.*%+|]', String),
-            (r'[\w"\-!/&;(){}]+', String),
+            (r'[\w!"§$%&/;@\'^?~#(){}]+', String),
+            (r'\S', String),  # catch all non whitespace
         ]
     }
 
@@ -94,7 +95,8 @@ class TypoScriptHtmlDataLexer(RegexLexer):
             (r'\s+', Text),
             # other
             (r'[<>,:=.*%+|]', String),
-            (r'[\w"\-!/&;(){}#]+', String),
+            (r'[\w!"§$%&/;@\'^(){}#?]+', String),
+            (r'\S', String),  # catch all non whitespace
         ]
     }
 
@@ -223,7 +225,7 @@ class TypoScriptLexer(RegexLexer):
             (r'(\s*#\s*\n)', Comment),
         ],
         'other': [
-            (r'[\w!"§$%&/;@\'^]+', Text),
+            (r'[\w!"§$%&/;@\'^?~#]+', Text),
             (r'\S', Text), # catch all non whitespace
         ],
     }
